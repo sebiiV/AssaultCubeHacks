@@ -152,10 +152,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ammo.cpp" />
     <ClCompile Include="AssaultCubeHack.cpp" />
+    <ClCompile Include="health.cpp" />
     <ClCompile Include="proc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ammo.h" />
+    <ClInclude Include="health.h" />
+    <ClInclude Include="offsets.h" />
     <ClInclude Include="proc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

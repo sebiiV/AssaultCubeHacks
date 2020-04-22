@@ -16,6 +16,9 @@
     <Filter Include="proc">
       <UniqueIdentifier>{47956c27-7fc1-4479-b48c-8b8bf534961d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="hacks">
+      <UniqueIdentifier>{0b5452f3-506a-4d08-ac1e-d5a7bf8a06de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssaultCubeHack.cpp">
@@ -24,9 +27,24 @@
     <ClCompile Include="proc.cpp">
       <Filter>proc</Filter>
     </ClCompile>
+    <ClCompile Include="ammo.cpp">
+      <Filter>hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="health.cpp">
+      <Filter>hacks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="proc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ammo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="health.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
