@@ -5,6 +5,7 @@ Player::Player(unsigned int ID,HANDLE hProcess,uintptr_t p_entity) {
 	this->playerID = ID;
 	this->hProcess = hProcess;
 	this->p_entity = p_entity;
+	this->health = this->getHealth();
 }
 
 
@@ -16,6 +17,13 @@ std::string Player::getName() {
 	buf[19] = '\0'; //very dirty hack to ensure its null terminated
 	this->name = std::string(buf);
 	return name;
+}
+
+int Player::getHealth() {
+	std::vector<unsigned int> offsets = {playerID, health_offset };
+	uintptr_t healthAddr = findVMAAddy(hProcess, p_entity, offsets);
+	ReadProcessMemory(hProcess, (BYTE*)healthAddr, &health, sizeof(health), nullptr);
+	return health;
 }
 
 Vector3 Player::getHeadPos() {

@@ -18,14 +18,13 @@ Game::Game(const wchar_t* application_name) {
 	// Annoyingly requires a different type of handle
 	RECT screen;
 	HWND windowHandle = FindWindow(NULL, applicationName);
-	if (GetWindowRect(windowHandle, &screen)) {
-		//this->gameHeight = screen.bottom - screen.top;
-		//this->gameWidth = screen.right - screen.left; // we need to calculate borders
-		this->gameHeight = 800;
-		this->gameWidth = 600;
+	if (GetClientRect(windowHandle, &screen)) {
+		this->gameHeight = screen.bottom - screen.top;
+		this->gameWidth = screen.right - screen.left; 
 	}
 	else {
 		std::cout << "Failed to get window size" << std::endl;
+		exit(1);
 	}
 
 }

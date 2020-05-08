@@ -1,6 +1,5 @@
 #include <Windows.h>
 #include <vector>
-#include <iostream>
 #include <string>
 
 #include "offsets.h"
@@ -16,6 +15,8 @@ public:
 	uintptr_t p_entity;
 	std::string name;
 
+	int health;
+
 	Vector3 headPos;
 	Vector3 footPos;
 
@@ -24,6 +25,8 @@ public:
 	std::string getName();
 	Vector3 getHeadPos();
 	Vector3 getFootPos();
+
+	int getHealth();
 
 	void setPitch(float pitch);
 	void setYaw(float yaw);

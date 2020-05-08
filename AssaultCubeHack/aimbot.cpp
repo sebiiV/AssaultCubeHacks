@@ -17,7 +17,6 @@ void Aimbot::update(Game &game,std::vector<Player> &players,Player &hacker){
 	//Is there an avaliable target near to us
 	Player* target = getClosestEnemyToCrosshair(game,players);
 	if (target != nullptr) {
-		std::cout << "targetID: " << target->playerID << std::endl;
 
 		//resolve health pointer chain
 		unsigned int a = target->playerID;
@@ -46,10 +45,11 @@ Player* Aimbot::getClosestEnemyToCrosshair(Game &game, std::vector<Player> &play
 	float dist = 999999999999999;
 	for (unsigned int i = 0; i < players.size(); ++i) {
 		Vector2 targetPos(0,0);
-		//TODO: checks that the other player isn't dead and on the other team
+		
 		bool visible = game.view.WorldToScreen(players[i].getHeadPos(),game.gameWidth,game.gameHeight, targetPos);
 
-		if (visible == true) {
+		//TODO: still wanna check for teams here
+		if ((visible == true) && (players[i].getHealth()) > 0) {
 			//calculate distance to crosshair
 			Vector2 crossHair(game.gameWidth / 2, game.gameHeight / 2);
 			float newDist = crossHair.distance(targetPos);

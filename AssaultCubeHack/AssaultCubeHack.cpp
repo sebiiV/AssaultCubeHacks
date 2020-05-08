@@ -12,7 +12,6 @@
 #include "game.h"
 #include "aimbot.h"
 
-
 int main()
 {
 	std::cout << "Assault Cube Hack" << std::endl;
@@ -28,10 +27,6 @@ int main()
 	//These are the scrubs
 	std::vector<Player> players;
 
-
-	//int i = game.getPlayerCount();
-
-
 	// instantiate all the player objects
 	for (unsigned int i = 4; i < game.getPlayerCount() * 4; i += 4) { //Increment by 4 as, 4 byte pointers
 		Player temp(i,game.hProcess,game.p_entitylist);
@@ -42,6 +37,9 @@ int main()
 	for (unsigned int i = 0; i < players.size(); ++i) {
 		std::cout << "name: " << players[i].getName() << std::endl;
 	}
+
+
+	std::cout << std::endl << "Hack loaded Sucessfully" << std::endl;
 
 	// the hack loop
 	while (!(GetAsyncKeyState(VK_DELETE)))
