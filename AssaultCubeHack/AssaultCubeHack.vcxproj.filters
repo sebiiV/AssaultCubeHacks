@@ -19,6 +19,9 @@
     <Filter Include="hacks">
       <UniqueIdentifier>{0b5452f3-506a-4d08-ac1e-d5a7bf8a06de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="entitys">
+      <UniqueIdentifier>{8e6afad2-214e-4413-b51e-3cbf32c79bc7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssaultCubeHack.cpp">
@@ -27,24 +30,48 @@
     <ClCompile Include="proc.cpp">
       <Filter>proc</Filter>
     </ClCompile>
-    <ClCompile Include="ammo.cpp">
+    <ClCompile Include="aimbot.cpp">
       <Filter>hacks</Filter>
     </ClCompile>
-    <ClCompile Include="health.cpp">
-      <Filter>hacks</Filter>
+    <ClCompile Include="player.cpp">
+      <Filter>entitys</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>entitys</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>entitys</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="proc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ammo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="offsets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="health.h">
+    <ClInclude Include="aimbot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

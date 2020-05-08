@@ -59,8 +59,10 @@ uintptr_t findVMAAddy(HANDLE hProc, uintptr_t ptr, std::vector<unsigned int> off
 {
 	uintptr_t addr = ptr;
 	for (unsigned int i = 0; i < offsets.size(); ++i){
-		ReadProcessMemory(hProc, (BYTE*)addr, &addr, sizeof(addr), 0);
-		addr += offsets[i];
+		if (offsets[i] != 0){ 
+			ReadProcessMemory(hProc, (BYTE*)addr, &addr, sizeof(addr), 0);
+			addr += offsets[i];
+		}
 	}
 	return addr;
 }

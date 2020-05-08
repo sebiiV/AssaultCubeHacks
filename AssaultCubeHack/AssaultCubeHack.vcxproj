@@ -152,16 +152,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ammo.cpp" />
+    <ClCompile Include="aimbot.cpp" />
     <ClCompile Include="AssaultCubeHack.cpp" />
-    <ClCompile Include="health.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="proc.cpp" />
+    <ClCompile Include="vector2.cpp" />
+    <ClCompile Include="vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ammo.h" />
-    <ClInclude Include="health.h" />
+    <ClInclude Include="aimbot.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="matrix.h" />
     <ClInclude Include="offsets.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="proc.h" />
+    <ClInclude Include="vector2.h" />
+    <ClInclude Include="vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

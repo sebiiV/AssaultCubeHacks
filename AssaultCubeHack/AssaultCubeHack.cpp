@@ -7,33 +7,53 @@
 #include <string>
 
 #include "proc.h"
-#include "ammo.h"
-#include "health.h"
+
 #include "offsets.h"
+#include "game.h"
+#include "aimbot.h"
+
 
 int main()
 {
-	// get procid of target process
-	DWORD procID = GetProcID(application);
+	std::cout << "Assault Cube Hack" << std::endl;
+	std::cout << "=================" << std::endl;
 
-	// getmodulebase address
-	uintptr_t moduleBase = GetModuleBaseAddress(procID, application);
+	// Lets initialize all our handles and such
+	Game game(application);
+	Aimbot aimbot;
 
-	// get handle to process
-	HANDLE hProcess = 0;
-	hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procID);
+	//this is you, you cheater
+	Player hacker(0,game.hProcess,game.p_player);
 
-	// resolve base address of pointer chain
-	uintptr_t dynamicPtrBaseAddress = moduleBase + initialOffset;
-	std::cout << "DynamicPtrBaseAddr = " << "0x" << std::hex << dynamicPtrBaseAddress << std::endl;
+	//These are the scrubs
+	std::vector<Player> players;
+
+
+	//int i = game.getPlayerCount();
+
+
+	// instantiate all the player objects
+	for (unsigned int i = 4; i < game.getPlayerCount() * 4; i += 4) { //Increment by 4 as, 4 byte pointers
+		Player temp(i,game.hProcess,game.p_entitylist);
+		players.push_back(temp);
+	}
+
+	//print out all the player names
+	for (unsigned int i = 0; i < players.size(); ++i) {
+		std::cout << "name: " << players[i].getName() << std::endl;
+	}
 
 	// the hack loop
 	while (!(GetAsyncKeyState(VK_DELETE)))
 	{
-		hackAmmo(hProcess, dynamicPtrBaseAddress);
-		hackHealth(hProcess, dynamicPtrBaseAddress);
-		Sleep(1);
+
+		//aimbot if ctrl is down
+		if (GetKeyState(VK_CONTROL) & 0x8000)
+		{
+			game.updateViewMatrix();
+			aimbot.update(game, players, hacker);
+		}
 	}
 
-	return 0;
+		return 0;
 }
