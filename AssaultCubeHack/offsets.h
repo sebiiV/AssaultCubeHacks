@@ -1,4 +1,3 @@
-
 #define application L"ac_client.exe"
 #define applicationName L"AssaultCube"
 
