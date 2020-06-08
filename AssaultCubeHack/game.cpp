@@ -8,7 +8,7 @@ Game::Game(const wchar_t* application_name) {
 	this->procID = GetProcID(application_name);
 	this->moduleBase = GetModuleBaseAddress(procID, application_name);
 
-	char* temp = GetModuleBaseAddressInternalPEB(application_name);
+	//char* temp = GetModuleBaseAddressInternalPEB(application_name);
 	this->hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procID);		// This is a really easy way to get caught...
 
 	this->p_viewMatrix = moduleBase + view_matrix_offset;
